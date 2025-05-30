@@ -44,13 +44,14 @@ def editar_usuario(usuario_id):
 
     sql = """
         UPDATE Usuario
-        SET nombre = %s, email = %s, password = %s
+        SET nombre = %s, email = %s, password = %s, rol = %s
         WHERE id = %s
     """
     cursor.execute(sql, (
         data['nombre'],
         data['email'],
         data['password'],
+        data['rol'],
         usuario_id
     ))
     conn.commit()
